@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<h1>Edit form</h1>
+
+<form th:action="@{/update}" method="post" th:object="${form}">
+    <div>
+        <label>
+            Ho va ten:
+            <input type="text" th:field="*{name}">
+        </label>
+    </div>
+    <div>
+        <label>
+            Nam sinh:
+            <select th:field="*{birth}">
+                <option th:each="y : ${allYear}" th:value="${y}" th:text="${y}"></option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label>
+            Gioi tinh:
+            <select th:field="*{gender}">
+                <option value="Nam">Nam</option>
+                <option value="Nu">Nu</option>
+                <option value="Khac">Khac</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label>
+            Quoc tich:
+            <select th:field="*{national}">
+                <option th:each="n : ${allNational}"
+                        th:value="${n}"
+                        th:text="${n}"
+                ></option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label>
+            CMND:
+            <input type="text" th:field="*{CMND}">
+        </label>
+    </div>
+    <div>
+        <input type="radio"
+               th:field="*{vehicle}"
+               th:each="v : ${allVehicle}"
+               th:text="${v}"
+               th:value="${v}">
+    </div>
+
+    <input type="submit">
+</form>
+
+</body>
+</html>

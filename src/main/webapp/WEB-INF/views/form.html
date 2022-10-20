@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+</head>
+<body>
+
+<a th:href="@{/edit}" th:text="Edit"></a>
+
+<table th:object="${form}" border="1">
+  <tr>
+    <td>Ho va ten</td>
+    <td th:text="*{name}"></td>
+  </tr>
+  <tr>
+    <td>Nam sinh</td>
+    <td th:text="*{birth}"></td>
+  </tr>
+  <tr>
+    <td>Gioi tinh</td>
+    <td th:text="*{gender}"></td>
+  </tr>
+  <tr>
+    <td>Quoc tich</td>
+    <td th:text="*{national}"></td>
+  </tr>
+  <tr>
+    <td>CMND</td>
+    <td th:text="*{CMND}"></td>
+  </tr>
+  <tr>
+    <td>Phuong tien</td>
+    <td th:text="*{vehicle}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
